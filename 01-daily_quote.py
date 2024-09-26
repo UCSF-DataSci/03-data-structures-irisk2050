@@ -14,16 +14,25 @@ Hint: Look up `random.choice()` to select a random item from a list. You can use
 import random
 from datetime import date
 
-
 quotes = [
     # Create a list of quotes here
+    "Life is like a box of chocolates. You never know what you're gonna get.",
+    "If you focus on what you left behind, you will never be able to see what lies ahead.",
+    "I never look back, darling! It distracts from the now.",
+    "Just keep swimming.",
+    "Adventure is out there.",
+    "The greatest thing you will ever learn is just to love and be loved in return.",
+    "May the Force be with you."
 ]
 
 def get_quote_of_the_day(quotes):
     todays_quote = None
 
     # Your code here
-    
+    today_date = date.today()
+    today_seed = today_date.toordinal()
+    random.seed(today_seed)  # Seed the random generator
+    todays_quote = random.choice(quotes)
     return todays_quote
 
 if __name__ == "__main__":
