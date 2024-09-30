@@ -24,8 +24,8 @@ def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
 
     # Your code here
-    # Remove punctuation from the text and split into words
     text = text.translate(str.maketrans("", "", string.punctuation)) # remove punctuation
+    text = text.strip()
     split_text = text.split() # List of all the strings
     for word in split_text:
         word = word.lower()
